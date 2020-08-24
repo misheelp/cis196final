@@ -1,0 +1,11 @@
+<p id="notice"><%= notice %></p>
+
+<h3 class="text-center">My Orders</h3>
+<div class="col-md-10 col-lg-8">
+    <% @orders.each do |order| %>
+    <hr /> 
+    <div class="post-preview"><a href="#"></a>
+        <p class="post-meta">       <%= order.item.price %>   <%= order.item.name %>    <%= link_to 'Show', order.item %></p>
+    </div>
+    <%end%> 
+</div>

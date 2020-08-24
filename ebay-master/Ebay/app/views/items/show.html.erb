@@ -1,0 +1,37 @@
+<section class="portfolio-block block-intro">
+
+    <div class="container">
+        <div class="about-me">
+        <p id="notice"><%= notice %></p>
+<section class="portfolio-block photography">
+    <div class="container">
+        <div class="row no-gutters">
+            <div class="col-md-6 col-lg-4 item zoom-on-hover">
+            <a href="#"><%= image_tag("#{@item.url}", class: "card-img-top w-100 d-block", style: "height: 440px;") %>
+            </a>
+            </div>
+        </div>
+    </div>
+</section>
+            <p class="text-left">Name: <%= @item.name %></p>
+            <p class="text-left">Price: <%= @item.price %></p>
+            <%if logged_in? && current_user.items.include?(@item)%>
+            <%= link_to 'Edit', edit_item_path(@item), class: "btn btn-outline-primary", role: "button"%>
+            <%= link_to 'Delete', [@item], method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-outline-primary", role: "button" %>
+            <%end%>
+        </div>
+        <br />
+        <%= link_to 'Back', items_path %> |
+        <%= link_to 'Add to cart', "#{@item.id}/buy", method: :post %>
+        <br />
+        <div class="portfolio">
+        <h5>People who bought this</h5>
+        <% @users.each do |user| %>
+    <div class="post-preview"><a href="#"></a>
+        <p class="post-meta">  <%= user.username %></p>
+    </div>
+    <%end%> 
+    </div>
+    </div>
+    
+</section>

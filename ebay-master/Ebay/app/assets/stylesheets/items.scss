@@ -1,0 +1,16 @@
+// Place all the styles related to the Items controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.img-fluid, .img-thumbnail {
+  width: 50px;
+  height: 50px;
+}
+
+img, svg {
+  vertical-align: middle;
+}
+
+img {
+  border-style: none;
+}
+

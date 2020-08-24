@@ -1,0 +1,31 @@
+
+
+<section class="portfolio-block block-intro">
+
+    <div class="container">
+        <div class="about-me">
+        <p id="notice"><%= notice %></p>
+
+            <p class="text-left">Password: <%= current_user.password %> </p>
+            <p class="text-left">Username: <%= current_user.username %></p>
+            <%= link_to 'Edit', "/users/#{current_user.id}/edit", class: "btn btn-outline-primary", role: "button"%>
+        </div>
+        <br />
+        <%= link_to 'Upload Item', new_item_path %> |
+<%= link_to 'Edit', edit_user_path(@user) %> |
+<%= link_to 'Back', users_path %>
+<div class="portfolio">
+<%if logged_in?%>
+        <h5>Items I uploaded</h5>
+        <% current_user.items.each do |item| %>
+    <hr /> 
+    <div class="post-preview"><a href="#"></a>
+        <p class="post-meta"> <%=item.name %>    <%= link_to 'Show', item %></p>
+    </div>
+    <%end%>
+    <%end%> 
+    </div>
+    </div>
+</section>
+
+
